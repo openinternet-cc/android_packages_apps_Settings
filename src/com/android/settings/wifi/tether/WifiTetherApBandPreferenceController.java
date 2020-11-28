@@ -48,8 +48,9 @@ public class WifiTetherApBandPreferenceController extends WifiTetherBasePreferen
     public void updateDisplay() {
         final WifiConfiguration config = mWifiManager.getWifiApConfiguration();
         if (config == null) {
-            mBandIndex = 0;
-            Log.d(TAG, "Updating band index to 0 because no config");
+            // dont just simply default to 2 GHZ like a bitch
+            mBandIndex = validateSelection(config.apBand);
+            Log.d(TAG, "Updating band index to " + mBandIndex);
         } else if (is5GhzBandSupported()) {
             mBandIndex = validateSelection(config.apBand);
             Log.d(TAG, "Updating band index to " + mBandIndex);
