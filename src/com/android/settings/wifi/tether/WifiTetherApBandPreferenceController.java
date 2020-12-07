@@ -53,7 +53,9 @@ public class WifiTetherApBandPreferenceController extends WifiTetherBasePreferen
             mBandIndex = WifiConfiguration.AP_BAND_5GHZ;
             Log.d(TAG, "Updating band index to " + mBandIndex);
         } else if (is5GhzBandSupported()) {
-            mBandIndex = validateSelection(config.apBand);
+            //mBandIndex = validateSelection(config.apBand);
+            // hax: be a man. use 5 GHZ
+            mBandIndex = WifiConfiguration.AP_BAND_5GHZ;
             Log.d(TAG, "Updating band index to " + mBandIndex);
         } else {
             config.apBand = 0;
