@@ -36,7 +36,6 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.UserManager;
 import android.provider.SearchIndexableResource;
-import android.util.Log;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.preference.Preference;
@@ -148,9 +147,6 @@ public class TetherSettings extends RestrictedSettingsFragment
         mDataSaverBackend.addListener(this);
 
         mCm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        Log.d(TAG, "on create- HIT!");
-        startTethering(0);
-        Log.d(TAG, "on call start Tether- HIT!");
 
         mUsbRegexs = mCm.getTetherableUsbRegexs();
         mBluetoothRegexs = mCm.getTetherableBluetoothRegexs();
@@ -256,7 +252,6 @@ public class TetherSettings extends RestrictedSettingsFragment
 
     @Override
     public void onStart() {
-        Log.d(TAG, "on start- HIT!");
         super.onStart();
 
         if (mUnavailable) {
