@@ -148,9 +148,9 @@ public class TetherSettings extends RestrictedSettingsFragment
         mDataSaverBackend.addListener(this);
 
         mCm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        Log.d(TAG, "on create- HIT!")
-        startTethering(0)
-        Log.d(TAG, "on call start Tether- HIT!")
+        Log.d(TAG, "on create- HIT!");
+        startTethering(0);
+        Log.d(TAG, "on call start Tether- HIT!");
 
         mUsbRegexs = mCm.getTetherableUsbRegexs();
         mBluetoothRegexs = mCm.getTetherableBluetoothRegexs();
@@ -256,7 +256,7 @@ public class TetherSettings extends RestrictedSettingsFragment
 
     @Override
     public void onStart() {
-        Log.d(TAG, "on start- HIT!")
+        Log.d(TAG, "on start- HIT!");
         super.onStart();
 
         if (mUnavailable) {
